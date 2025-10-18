@@ -1,25 +1,38 @@
 package com.jimenez.chatroom.model;
 
-public class ChatMessage {
+import java.time.LocalDateTime;
 
-    // Fields for message content and sender's username
+public class ChatMessage {
+    private String sender;
     private String content;
-    private String username;
+    private LocalDateTime timestamp;
+
+    // Constructor
+    public ChatMessage(String sender, String content) {
+        this.sender = sender;
+        this.content = content;
+        this.timestamp = LocalDateTime.now();
+    }
 
     // Getters and setters
+    public String getSender() {
+        return sender;
+    }
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
     public String getContent() {
         return content;
     }
-
     public void setContent(String content) {
         this.content = content;
     }
 
-    public String getUsername() {
-        return username;
+    public LocalDateTime getTimestamp() {
+        return timestamp;
     }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 }
